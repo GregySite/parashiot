@@ -134,18 +134,18 @@ export const parashiotAliyot: ParashaWithAliyot[] = [
     ]
   },
   {
-    parashaId: 10,
-    sefariaUrl: "https://www.sefaria.org/Genesis.41.1-44.17",
-    aliyot: [
-      { number: 1, name: "Rishon", start: "41:1", end: "41:14", verses: 14, summary: "Pharaon rêve des vaches et des épis. Personne ne peut interpréter. L'échanson se souvient de Yossef." },
-      { number: 2, name: "Sheni", start: "41:15", end: "41:38", verses: 24, summary: "Yossef interprète les rêves : 7 ans d'abondance puis 7 de famine. Il conseille de stocker." },
-      { number: 3, name: "Shlishi", start: "41:39", end: "41:52", verses: 14, summary: "Yossef est nommé vice-roi. Il épouse Asnat. Naissance de Manassé et Éfrayim." },
-      { number: 4, name: "Revi'i", start: "41:53", end: "42:18", verses: 23, summary: "La famine commence. Les frères viennent en Égypte. Yossef les reconnaît et les accuse d'espionnage." },
-      { number: 5, name: "Hamishi", start: "42:19", end: "43:15", verses: 35, summary: "Shimon reste en otage. Les frères rentrent. Ils reviennent avec Binyamin." },
-      { number: 6, name: "Shishi", start: "43:16", end: "44:17", verses: 36, summary: "Festin chez Yossef. La coupe est cachée dans le sac de Binyamin. Les frères sont arrêtés." },
-      { number: 7, name: "Shvi'i", start: "44:18", end: "44:17", verses: 0, summary: "Note: Cette parasha se termine à 44:17. La 7e aliyah est fusionnée avec la 6e selon certaines traditions." }
-    ]
-  },
+  "parashaId": 10,
+  "sefariaUrl": "https://www.sefaria.org/Genesis.41.1-44.17",
+  "aliyot": [
+    { "number": 1, "name": "Rishon", "start": "41:1", "end": "41:14", "verses": 14, "summary": "Pharaon rêve des vaches et des épis. Personne ne peut interpréter. L'échanson se souvient de Yossef." },
+    { "number": 2, "name": "Sheni", "start": "41:15", "end": "41:38", "verses": 24, "summary": "Yossef interprète les rêves : 7 ans d'abondance puis 7 de famine. Il conseille de stocker." },
+    { "number": 3, "name": "Shlishi", "start": "41:39", "end": "41:52", "verses": 14, "summary": "Yossef est nommé vice-roi. Il épouse Asnat. Naissance de Manassé et Éfrayim." },
+    { "number": 4, "name": "Revi'i", "start": "41:53", "end": "42:18", "verses": 23, "summary": "La famine commence. Les frères viennent en Égypte. Yossef les reconnaît et les accuse d'espionnage." },
+    { "number": 5, "name": "Hamishi", "start": "42:19", "end": "43:15", "verses": 35, "summary": "Shimon reste en otage. Les frères rentrent. Ils reviennent avec Binyamin." },
+    { "number": 6, "name": "Shishi", "start": "43:16", "end": "43:29", "verses": 14, "summary": "Festin chez Yossef. Yossef est ému en voyant Binyamin et doit sortir pour pleurer." },
+    { "number": 7, "name": "Shvi'i", "start": "43:30", "end": "44:17", "verses": 20, "summary": "La coupe est cachée dans le sac de Binyamin. Les frères sont poursuivis et arrêtés. Yéhouda s'approche." }
+  ]
+},
   {
     parashaId: 11,
     sefariaUrl: "https://www.sefaria.org/Genesis.44.18-47.27",
