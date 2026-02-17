@@ -255,8 +255,8 @@ export const parashiotAliyot: ParashaWithAliyot[] = [
     sefariaUrl: "https://www.sefaria.org/Exodus.25.1-27.19",
     aliyot: [
       { number: 1, name: "Rishon", start: "25:1", end: "25:16", verses: 16, summary: "D.ieu demande des contributions. Instructions pour l'Arche d'alliance." },
-      { number: 2, name: "Sheni", start: "25:17", end: "25:40", verses: 24, summary: "Le propitiatoire et les chérubins. La table des pains de proposition. Le candélabre." },
-      { number: 3, name: "Shlishi", start: "26:1", end: "26:14", verses: 14, summary: "Les tentures du Tabernacle." },
+      { number: 2, name: "Sheni", start: "25:17", end: "25:30", verses: 14, summary: "Le propitiatoire et les chérubins. La table des pains de proposition." },
+      { number: 3, name: "Shlishi", start: "25:31", end: "26:14", verses: 24, summary: "Le candélabre (Menorah) et les tentures du Tabernacle." },
       { number: 4, name: "Revi'i", start: "26:15", end: "26:30", verses: 16, summary: "Les planches et les traverses du Tabernacle." },
       { number: 5, name: "Hamishi", start: "26:31", end: "26:37", verses: 7, summary: "Le voile séparant le Saint des Saints. Le rideau d'entrée." },
       { number: 6, name: "Shishi", start: "27:1", end: "27:8", verses: 8, summary: "L'autel des holocaustes en bronze." },
