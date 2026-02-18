@@ -119,15 +119,26 @@ All colors MUST be HSL.
   }
 }
 
-/* FORCE TOTAL DESTRUCTION DU BADGE LOVABLE */
-a[href*="lovable.dev"],        /* Cible le lien */
-a[href*="lovable.dev"] * {     /* Cible tout ce qui est DANS le lien (icone, svg, div) */
+/* --- DESTRUCTION TOTALE DU BADGE LOVABLE --- */
+
+/* 1. Cache le lien lui-même */
+a[href*="lovable.dev"] {
+    display: none !important;
+}
+
+/* 2. MAGIE : Cache le bloc PARENT qui contient le lien */
+/* Cela va supprimer le carré noir, la croix et tout le conteneur */
+div:has(> a[href*="lovable.dev"]),
+div:has(a[href*="lovable.dev"]) {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
     pointer-events: none !important;
-    position: absolute !important;
-    z-index: -9999 !important;
+}
+
+/* 3. Sécurité : Cache par ID connus (souvent utilisés par ces outils) */
+#lovable-badge,
+#gpt-engineer-badge,
+.lovable-badge-container {
+    display: none !important;
 }
