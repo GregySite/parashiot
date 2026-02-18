@@ -119,11 +119,15 @@ All colors MUST be HSL.
   }
 }
 
-/* Cache tout le bloc Lovable : texte, fond et icône */
-#lovable-badge, 
-a[href*="lovable.dev"] {
+/* FORCE TOTAL DESTRUCTION DU BADGE LOVABLE */
+a[href*="lovable.dev"],        /* Cible le lien */
+a[href*="lovable.dev"] * {     /* Cible tout ce qui est DANS le lien (icone, svg, div) */
     display: none !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    z-index: -9999 !important;
 }
