@@ -119,7 +119,11 @@ All colors MUST be HSL.
   }
 }
 
-/* Masquer le badge Lovable */
+/* Cache tout le bloc Lovable : texte, fond et icône */
+#lovable-badge, 
 a[href*="lovable.dev"] {
     display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
 }
