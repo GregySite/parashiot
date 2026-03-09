@@ -53,11 +53,9 @@ const AliyotChart = ({ chartData }: { chartData: { name: string; verses: number;
 );
 
 const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialogProps) => {
-  if (!parasha) return null;
-
-  const aliyotData = getAliyotForParasha(parasha.id);
-  const combinedData = getCombinedAliyotForParasha(parasha.id);
-  const haftaraData = getHaftaraForParasha(parasha.id);
+  const aliyotData = parasha ? getAliyotForParasha(parasha.id) : undefined;
+  const combinedData = parasha ? getCombinedAliyotForParasha(parasha.id) : undefined;
+  const haftaraData = parasha ? getHaftaraForParasha(parasha.id) : undefined;
 
   const hasCombined = !!combinedData;
 
@@ -76,6 +74,8 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
       range: `${aliyah.start} - ${aliyah.end}`,
     })) || [];
   }, [combinedData]);
+
+  if (!parasha) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
