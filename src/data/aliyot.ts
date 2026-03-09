@@ -723,3 +723,136 @@ export const parashiotAliyot: ParashaWithAliyot[] = [
 export function getAliyotForParasha(parashaId: number): ParashaWithAliyot | undefined {
   return parashiotAliyot.find(p => p.parashaId === parashaId);
 }
+
+// Combined parashiot pairs with their combined aliyot
+export interface CombinedParasha {
+  parashaIds: [number, number];
+  name: string;
+  hebrewName: string;
+  aliyot: Aliyah[];
+  sefariaUrl: string;
+}
+
+export const combinedParashiot: CombinedParasha[] = [
+  {
+    parashaIds: [22, 23],
+    name: "Vayakhel-Pekudei",
+    hebrewName: "וַיַּקְהֵל־פְקוּדֵי",
+    sefariaUrl: "https://www.sefaria.org/Exodus.35.1-40.38",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "35:1", end: "35:29", verses: 29, summary: "Le Shabbat. Appel aux contributions. Le peuple apporte généreusement." },
+      { number: 2, name: "Sheni", start: "35:30", end: "37:16", verses: 60, summary: "Betsalel et Oholiav nommés. Le peuple apporte trop. Construction des tentures, planches, Arche et table." },
+      { number: 3, name: "Shlishi", start: "37:17", end: "37:29", verses: 13, summary: "Le candélabre (Ménorah) et l'autel des parfums." },
+      { number: 4, name: "Revi'i", start: "38:1", end: "39:1", verses: 32, summary: "L'autel des holocaustes, la cuve, le parvis. Inventaire des métaux." },
+      { number: 5, name: "Hamishi", start: "39:2", end: "39:21", verses: 20, summary: "Confection de l'éphod et du pectoral avec les 12 pierres." },
+      { number: 6, name: "Shishi", start: "39:22", end: "39:43", verses: 22, summary: "La robe, les tuniques, le turban. Le travail est achevé. Moïse bénit." },
+      { number: 7, name: "Shvi'i", start: "40:1", end: "40:38", verses: 38, summary: "Érection du Tabernacle. La nuée couvre la Tente. La Gloire de D.ieu remplit le Tabernacle." }
+    ]
+  },
+  {
+    parashaIds: [27, 28],
+    name: "Tazria-Metzora",
+    hebrewName: "תַזְרִיעַ־מְצֹרָע",
+    sefariaUrl: "https://www.sefaria.org/Leviticus.12.1-15.33",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "12:1", end: "13:23", verses: 31, summary: "Impureté après accouchement. Début des lois de tzaraat : signes sur la peau, examen par le Kohen." },
+      { number: 2, name: "Sheni", start: "13:24", end: "13:39", verses: 16, summary: "Tzaraat sur brûlure. Tzaraat sur la tête ou la barbe." },
+      { number: 3, name: "Shlishi", start: "13:40", end: "13:54", verses: 15, summary: "Calvitie. Le lépreux mis à l'écart. Tzaraat sur les vêtements." },
+      { number: 4, name: "Revi'i", start: "13:55", end: "14:20", verses: 25, summary: "Suite des vêtements. Purification du lépreux : oiseaux, rasage, sacrifices." },
+      { number: 5, name: "Hamishi", start: "14:21", end: "14:32", verses: 12, summary: "Purification pour le pauvre. Offrandes réduites." },
+      { number: 6, name: "Shishi", start: "14:33", end: "15:15", verses: 40, summary: "Tzaraat des maisons. Examen, démolition, purification. Impureté des écoulements masculins." },
+      { number: 7, name: "Shvi'i", start: "15:16", end: "15:33", verses: 18, summary: "Impureté séminale. Impureté menstruelle. Sacrifices de purification." }
+    ]
+  },
+  {
+    parashaIds: [29, 30],
+    name: "Acharei Mot-Kedoshim",
+    hebrewName: "אַחֲרֵי מוֹת־קְדֹשִׁים",
+    sefariaUrl: "https://www.sefaria.org/Leviticus.16.1-20.27",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "16:1", end: "16:24", verses: 24, summary: "Le service de Yom Kippour. Aharon entre dans le Saint des Saints. Les deux boucs." },
+      { number: 2, name: "Sheni", start: "16:25", end: "17:7", verses: 17, summary: "L'holocauste. Yom Kippour est un repos. Interdiction de sacrifier hors du Tabernacle." },
+      { number: 3, name: "Shlishi", start: "17:8", end: "18:21", verses: 30, summary: "Interdiction du sang. Vivre par les commandements. Unions incestueuses. Molokh." },
+      { number: 4, name: "Revi'i", start: "18:22", end: "19:14", verses: 23, summary: "Relations interdites. Soyez saints. Respect des parents. Shabbat. Vol. Exploitation." },
+      { number: 5, name: "Hamishi", start: "19:15", end: "19:32", verses: 18, summary: "Justice. Médisance. Amour du prochain. Orla. Divination. Respect des anciens." },
+      { number: 6, name: "Shishi", start: "19:33", end: "20:7", verses: 12, summary: "Amour de l'étranger. Poids justes. Peine pour le Molokh. Sanctification." },
+      { number: 7, name: "Shvi'i", start: "20:8", end: "20:27", verses: 20, summary: "Peines pour relations interdites. Distinction d'avec les nations. Sorcellerie." }
+    ]
+  },
+  {
+    parashaIds: [32, 33],
+    name: "Behar-Bechukotai",
+    hebrewName: "בְּהַר־בְּחֻקֹּתַי",
+    sefariaUrl: "https://www.sefaria.org/Leviticus.25.1-27.34",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "25:1", end: "25:18", verses: 18, summary: "Shémita : la terre se repose la 7e année. Le Jubilé. Honnêteté. Confiance en D.ieu." },
+      { number: 2, name: "Sheni", start: "25:19", end: "25:28", verses: 10, summary: "D.ieu bénira la 6e année. La terre appartient à D.ieu. Rachat des terres." },
+      { number: 3, name: "Shlishi", start: "25:29", end: "25:38", verses: 10, summary: "Maisons dans les villes murées. Villes lévitiques. Prêt au pauvre." },
+      { number: 4, name: "Revi'i", start: "25:39", end: "26:9", verses: 26, summary: "L'Hébreu qui se vend. Rachat. Idolâtrie interdite. Bénédictions : pluie, récolte, paix, alliance." },
+      { number: 5, name: "Hamishi", start: "26:10", end: "26:46", verses: 37, summary: "Les réprimandes (Tokhe'ha) : maladies, défaites, exil. Mais D.ieu n'abandonne pas Son peuple." },
+      { number: 6, name: "Shishi", start: "27:1", end: "27:15", verses: 15, summary: "Valeur des personnes consacrées. Valeur des animaux et des maisons." },
+      { number: 7, name: "Shvi'i", start: "27:16", end: "27:34", verses: 19, summary: "Champs consacrés. Le Jubilé. Ce qui est voué (herem). La dîme. Fin du Lévitique." }
+    ]
+  },
+  {
+    parashaIds: [39, 40],
+    name: "Chukat-Balak",
+    hebrewName: "חֻקַּת־בָּלָק",
+    sefariaUrl: "https://www.sefaria.org/Numbers.19.1-25.9",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "19:1", end: "20:6", verses: 28, summary: "La vache rousse. Eaux de purification. Mort de Myriam. Pas d'eau." },
+      { number: 2, name: "Sheni", start: "20:7", end: "20:21", verses: 15, summary: "Moïse frappe le rocher. Il ne pourra pas entrer en terre promise. Édom refuse le passage." },
+      { number: 3, name: "Shlishi", start: "20:22", end: "21:20", verses: 28, summary: "Mort d'Aharon. Guerre contre le Cananéen. Le serpent de bronze. Cantique du puits." },
+      { number: 4, name: "Revi'i", start: "21:21", end: "22:12", verses: 27, summary: "Victoire sur Si'hon et Og. Balak envoie chercher Bilaam. D.ieu interdit." },
+      { number: 5, name: "Hamishi", start: "22:13", end: "22:38", verses: 26, summary: "Nouvelle ambassade. L'ânesse de Bilaam voit l'ange et parle." },
+      { number: 6, name: "Shishi", start: "22:39", end: "23:26", verses: 29, summary: "Premiers sacrifices. Première et deuxième bénédictions de Bilaam." },
+      { number: 7, name: "Shvi'i", start: "23:27", end: "25:9", verses: 38, summary: "Troisième bénédiction. Prophéties. Faute de Baal-Péor. Pin'has tue Zimri." }
+    ]
+  },
+  {
+    parashaIds: [42, 43],
+    name: "Matot-Masei",
+    hebrewName: "מַטּוֹת־מַסְעֵי",
+    sefariaUrl: "https://www.sefaria.org/Numbers.30.2-36.13",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "30:2", end: "31:12", verses: 28, summary: "Lois des vœux. Guerre contre Midian. Les 5 rois et Bilaam sont tués." },
+      { number: 2, name: "Sheni", start: "31:13", end: "31:54", verses: 42, summary: "Moïse se fâche. Purification des soldats et du butin. Partage. Offrande d'or." },
+      { number: 3, name: "Shlishi", start: "32:1", end: "32:19", verses: 19, summary: "Réouven et Gad demandent les terres de Transjordanie. Moïse les réprimande." },
+      { number: 4, name: "Revi'i", start: "32:20", end: "33:49", verses: 72, summary: "Accord. Attribution des terres. Liste des 42 étapes depuis l'Égypte." },
+      { number: 5, name: "Hamishi", start: "33:50", end: "34:15", verses: 22, summary: "Ordre de conquérir. Frontières de la terre promise." },
+      { number: 6, name: "Shishi", start: "34:16", end: "35:8", verses: 22, summary: "Chefs pour le partage. 48 villes lévitiques dont 6 de refuge." },
+      { number: 7, name: "Shvi'i", start: "35:9", end: "36:13", verses: 39, summary: "Lois des villes de refuge. Le meurtrier involontaire. Les filles héritières. Fin des Nombres." }
+    ]
+  },
+  {
+    parashaIds: [51, 52],
+    name: "Nitsavim-Vayelech",
+    hebrewName: "נִצָּבִים־וַיֵּלֶךְ",
+    sefariaUrl: "https://www.sefaria.org/Deuteronomy.29.9-31.30",
+    aliyot: [
+      { number: 1, name: "Rishon", start: "29:9", end: "29:28", verses: 20, summary: "Vous êtes tous ici pour l'alliance. Pour les générations futures aussi. Avertissement contre l'idolâtrie." },
+      { number: 2, name: "Sheni", start: "30:1", end: "30:6", verses: 6, summary: "Après l'exil, le retour. D.ieu circoncira votre cœur." },
+      { number: 3, name: "Shlishi", start: "30:7", end: "30:14", verses: 8, summary: "Malédictions sur les ennemis. Prospérité. La Torah n'est pas au ciel." },
+      { number: 4, name: "Revi'i", start: "30:15", end: "31:6", verses: 12, summary: "Choisis la vie ! Moïse a 120 ans. Josué prend la relève. Soyez forts." },
+      { number: 5, name: "Hamishi", start: "31:7", end: "31:13", verses: 7, summary: "Moïse encourage Josué. Il écrit la Torah. Hakhel tous les 7 ans." },
+      { number: 6, name: "Shishi", start: "31:14", end: "31:19", verses: 6, summary: "D.ieu annonce que le peuple se corrompra. La Torah sera témoin." },
+      { number: 7, name: "Shvi'i", start: "31:20", end: "31:30", verses: 11, summary: "Le chant sera témoin. Moïse écrit. La Torah à côté de l'Arche." }
+    ]
+  }
+];
+
+/**
+ * Get the combined aliyot for a parasha that's part of a double pair
+ */
+export function getCombinedAliyotForParasha(parashaId: number): CombinedParasha | undefined {
+  return combinedParashiot.find(c => c.parashaIds.includes(parashaId));
+}
+
+/**
+ * Get the partner parasha ID for a double pair
+ */
+export function getPartnerParashaId(parashaId: number): number | undefined {
+  const combined = combinedParashiot.find(c => c.parashaIds.includes(parashaId));
+  if (!combined) return undefined;
+  return combined.parashaIds.find(id => id !== parashaId);
+}
