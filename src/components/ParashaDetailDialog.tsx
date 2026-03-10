@@ -16,7 +16,7 @@ interface ParashaDetailDialogProps {
 }
 
 const AliyotChart = ({ chartData }: { chartData: { name: string; verses: number; range: string }[] }) => (
-  <div className="h-64">
+  <div className="h-48 sm:h-64">
     <ResponsiveContainer width="100%" height="100%">
       <BarChart data={chartData} margin={{ top: 25, right: 10, left: 10, bottom: 20 }}>
         <XAxis
@@ -79,43 +79,43 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-auto p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-3xl flex items-center gap-3">
-            <BookOpen className="h-8 w-8 text-primary" />
-            <div>
-              <div className="flex items-center gap-2">
+          <DialogTitle className="text-xl sm:text-3xl flex items-center gap-2 sm:gap-3">
+            <BookOpen className="h-6 w-6 sm:h-8 sm:w-8 text-primary shrink-0" />
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
                 {parasha.name}
                 {hasCombined && (
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs">
                     <Users className="h-3 w-3 mr-1" />
-                    Peut être doublée
+                    Doublée
                   </Badge>
                 )}
               </div>
-              <div className="text-2xl text-muted-foreground font-hebrew">{parasha.hebrewName}</div>
+              <div className="text-lg sm:text-2xl text-muted-foreground font-hebrew">{parasha.hebrewName}</div>
             </div>
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6 mt-4">
           {/* Basic Info */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Livre</div>
-              <div className="text-xl font-semibold">{parasha.book}</div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-4">
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Livre</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.book}</div>
             </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Versets</div>
-              <div className="text-xl font-semibold">{parasha.verses}</div>
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Versets</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.verses}</div>
             </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Mots</div>
-              <div className="text-xl font-semibold">{parasha.words.toLocaleString()}</div>
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Mots</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.words.toLocaleString()}</div>
             </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Lettres</div>
-              <div className="text-xl font-semibold">{parasha.letters.toLocaleString()}</div>
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Lettres</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.letters.toLocaleString()}</div>
             </div>
           </div>
 
@@ -131,20 +131,20 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
           {/* Aliyot Chart Section */}
           {aliyotData && chartDataSimple.length > 0 && (
-            <div className="bg-muted/30 p-6 rounded-lg border">
-              <div className="flex items-center gap-3 mb-4">
-                <BookOpen className="h-6 w-6 text-primary" />
-                <h3 className="text-xl font-semibold">Versets par Aliyah</h3>
+            <div className="bg-muted/30 p-3 sm:p-6 rounded-lg border">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                <h3 className="text-base sm:text-xl font-semibold">Versets par Aliyah</h3>
               </div>
 
               {hasCombined ? (
                 <Tabs defaultValue="simple">
-                  <TabsList className="mb-4 w-full">
-                    <TabsTrigger value="simple" className="flex-1">
-                      📖 Lecture simple
+                  <TabsList className="mb-3 sm:mb-4 w-full h-auto flex-wrap">
+                    <TabsTrigger value="simple" className="flex-1 text-xs sm:text-sm py-2">
+                      📖 Simple
                     </TabsTrigger>
-                    <TabsTrigger value="combined" className="flex-1">
-                      📚 Lecture double ({combinedData.name})
+                    <TabsTrigger value="combined" className="flex-1 text-xs sm:text-sm py-2">
+                      📚 Double
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="simple">
@@ -174,10 +174,10 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
           {/* Haftara Section */}
           {haftaraData && (
-            <div className="bg-muted/30 p-6 rounded-lg border">
-              <div className="flex items-center gap-3 mb-4">
-                <ScrollText className="h-6 w-6 text-primary" />
-                <h3 className="text-xl font-semibold">Haftara</h3>
+            <div className="bg-muted/30 p-3 sm:p-6 rounded-lg border">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <ScrollText className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                <h3 className="text-base sm:text-xl font-semibold">Haftara</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2">
