@@ -80,86 +80,37 @@ const ParachiotCharts = () => {
             <TabsTrigger value="letters" className="text-xs sm:text-sm py-2">Lettres</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="verses">
-            <div className="w-full overflow-x-auto">
-              <div className="min-w-[900px] sm:min-w-0">
-                <ResponsiveContainer width="100%" height={650}>
-                  <BarChart data={parashiotData} margin={{ top: 20, right: 30, left: 20, bottom: 120 }}>
-                    <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                    <XAxis
-                      dataKey="name"
-                      angle={-90}
-                      textAnchor="end"
-                      height={150}
-                      className="text-xs"
-                      interval={0}
-                    />
-                    <YAxis />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Bar dataKey="verses" name="Psoukim" radius={[8, 8, 0, 0]}>
-                      {parashiotData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getBarColor(entry, 'hsl(var(--primary))')} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="words">
-            <div className="w-full overflow-x-auto">
-              <div className="min-w-[900px] sm:min-w-0">
-                <ResponsiveContainer width="100%" height={650}>
-                  <BarChart data={parashiotData} margin={{ top: 20, right: 30, left: 20, bottom: 120 }}>
-                    <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                    <XAxis
-                      dataKey="name"
-                      angle={-90}
-                      textAnchor="end"
-                      height={150}
-                      className="text-xs"
-                      interval={0}
-                    />
-                    <YAxis />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Bar dataKey="words" name="Mots" radius={[8, 8, 0, 0]}>
-                      {parashiotData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getBarColor(entry, 'hsl(var(--primary))')} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="letters">
-            <div className="w-full overflow-x-auto">
-              <div className="min-w-[900px] sm:min-w-0">
-                <ResponsiveContainer width="100%" height={650}>
-                  <BarChart data={parashiotData} margin={{ top: 20, right: 30, left: 20, bottom: 120 }}>
-                    <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                    <XAxis
-                      dataKey="name"
-                      angle={-90}
-                      textAnchor="end"
-                      height={150}
-                      className="text-xs"
-                      interval={0}
-                    />
-                    <YAxis />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Bar dataKey="letters" name="Lettres" radius={[8, 8, 0, 0]}>
-                      {parashiotData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getBarColor(entry, 'hsl(var(--primary))')} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </TabsContent>
+          {["verses", "words", "letters"].map((key) => {
+            const labelMap: Record<string, string> = { verses: "Psoukim", words: "Mots", letters: "Lettres" };
+            return (
+              <TabsContent key={key} value={key}>
+                <div className="w-full overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0">
+                  <div className="min-w-[600px] sm:min-w-0">
+                    <ResponsiveContainer width="100%" height={500}>
+                      <BarChart data={parashiotData} margin={{ top: 20, right: 10, left: 0, bottom: 100 }}>
+                        <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                        <XAxis
+                          dataKey="name"
+                          angle={-90}
+                          textAnchor="end"
+                          height={120}
+                          tick={{ fontSize: 9 }}
+                          interval={0}
+                        />
+                        <YAxis tick={{ fontSize: 11 }} width={45} />
+                        <Tooltip content={<CustomTooltip />} />
+                        <Bar dataKey={key} name={labelMap[key]} radius={[4, 4, 0, 0]}>
+                          {parashiotData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={getBarColor(entry, 'hsl(var(--primary))')} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+              </TabsContent>
+            );
+          })}
         </Tabs>
       </CardContent>
     </Card>
