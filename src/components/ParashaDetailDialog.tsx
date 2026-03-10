@@ -100,22 +100,22 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
         <div className="space-y-6 mt-4">
           {/* Basic Info */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Livre</div>
-              <div className="text-xl font-semibold">{parasha.book}</div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-4">
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Livre</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.book}</div>
             </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Versets</div>
-              <div className="text-xl font-semibold">{parasha.verses}</div>
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Versets</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.verses}</div>
             </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Mots</div>
-              <div className="text-xl font-semibold">{parasha.words.toLocaleString()}</div>
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Mots</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.words.toLocaleString()}</div>
             </div>
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Lettres</div>
-              <div className="text-xl font-semibold">{parasha.letters.toLocaleString()}</div>
+            <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
+              <div className="text-xs sm:text-sm text-muted-foreground">Lettres</div>
+              <div className="text-base sm:text-xl font-semibold">{parasha.letters.toLocaleString()}</div>
             </div>
           </div>
 
