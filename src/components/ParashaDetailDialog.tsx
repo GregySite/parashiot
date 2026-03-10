@@ -139,12 +139,12 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
               {hasCombined ? (
                 <Tabs defaultValue="simple">
-                  <TabsList className="mb-4 w-full">
-                    <TabsTrigger value="simple" className="flex-1">
-                      📖 Lecture simple
+                  <TabsList className="mb-3 sm:mb-4 w-full h-auto flex-wrap">
+                    <TabsTrigger value="simple" className="flex-1 text-xs sm:text-sm py-2">
+                      📖 Simple
                     </TabsTrigger>
-                    <TabsTrigger value="combined" className="flex-1">
-                      📚 Lecture double ({combinedData.name})
+                    <TabsTrigger value="combined" className="flex-1 text-xs sm:text-sm py-2">
+                      📚 Double
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="simple">
