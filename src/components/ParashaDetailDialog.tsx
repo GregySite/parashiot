@@ -174,10 +174,10 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
           {/* Haftara Section */}
           {haftaraData && (
-            <div className="bg-muted/30 p-6 rounded-lg border">
-              <div className="flex items-center gap-3 mb-4">
-                <ScrollText className="h-6 w-6 text-primary" />
-                <h3 className="text-xl font-semibold">Haftara</h3>
+            <div className="bg-muted/30 p-3 sm:p-6 rounded-lg border">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <ScrollText className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                <h3 className="text-base sm:text-xl font-semibold">Haftara</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2">
