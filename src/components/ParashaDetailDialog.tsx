@@ -81,19 +81,19 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-auto p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-3xl flex items-center gap-3">
-            <BookOpen className="h-8 w-8 text-primary" />
-            <div>
-              <div className="flex items-center gap-2">
+          <DialogTitle className="text-xl sm:text-3xl flex items-center gap-2 sm:gap-3">
+            <BookOpen className="h-6 w-6 sm:h-8 sm:w-8 text-primary shrink-0" />
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
                 {parasha.name}
                 {hasCombined && (
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs">
                     <Users className="h-3 w-3 mr-1" />
-                    Peut être doublée
+                    Doublée
                   </Badge>
                 )}
               </div>
-              <div className="text-2xl text-muted-foreground font-hebrew">{parasha.hebrewName}</div>
+              <div className="text-lg sm:text-2xl text-muted-foreground font-hebrew">{parasha.hebrewName}</div>
             </div>
           </DialogTitle>
         </DialogHeader>
