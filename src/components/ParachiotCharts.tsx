@@ -67,17 +67,17 @@ const ParachiotCharts = () => {
 
   return (
     <Card className="shadow-lg">
-      <CardHeader>
-        <CardTitle className="text-2xl flex items-center gap-2">
+      <CardHeader className="p-4 sm:p-6">
+        <CardTitle className="text-lg sm:text-2xl flex items-center gap-2">
           📊 Parachiots Classées par Longueur
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-3 sm:p-6 pt-0">
         <Tabs defaultValue="verses" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-6">
-            <TabsTrigger value="verses">Par Psoukim</TabsTrigger>
-            <TabsTrigger value="words">Par Mots</TabsTrigger>
-            <TabsTrigger value="letters">Par Lettres</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 mb-4 sm:mb-6 h-auto">
+            <TabsTrigger value="verses" className="text-xs sm:text-sm py-2">Psoukim</TabsTrigger>
+            <TabsTrigger value="words" className="text-xs sm:text-sm py-2">Mots</TabsTrigger>
+            <TabsTrigger value="letters" className="text-xs sm:text-sm py-2">Lettres</TabsTrigger>
           </TabsList>
 
           <TabsContent value="verses">
