@@ -16,7 +16,7 @@ interface ParashaDetailDialogProps {
 }
 
 const AliyotChart = ({ chartData }: { chartData: { name: string; verses: number; range: string }[] }) => (
-  <div className="h-64">
+  <div className="h-48 sm:h-64">
     <ResponsiveContainer width="100%" height="100%">
       <BarChart data={chartData} margin={{ top: 25, right: 10, left: 10, bottom: 20 }}>
         <XAxis
