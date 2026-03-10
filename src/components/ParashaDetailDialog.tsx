@@ -131,10 +131,10 @@ const ParashaDetailDialog = ({ parasha, open, onOpenChange }: ParashaDetailDialo
 
           {/* Aliyot Chart Section */}
           {aliyotData && chartDataSimple.length > 0 && (
-            <div className="bg-muted/30 p-6 rounded-lg border">
-              <div className="flex items-center gap-3 mb-4">
-                <BookOpen className="h-6 w-6 text-primary" />
-                <h3 className="text-xl font-semibold">Versets par Aliyah</h3>
+            <div className="bg-muted/30 p-3 sm:p-6 rounded-lg border">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                <h3 className="text-base sm:text-xl font-semibold">Versets par Aliyah</h3>
               </div>
 
               {hasCombined ? (
