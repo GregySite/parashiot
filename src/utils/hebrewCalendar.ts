@@ -2,6 +2,19 @@ import { HDate, HebrewCalendar, Location } from '@hebcal/core';
 import { getLeyningOnDate, Leyning } from '@hebcal/leyning';
 
 /**
+ * Map of known Hebcal aliases to our canonical names
+ */
+const parashaAliases: Record<string, string> = {
+  'achrei mot': 'acharei mot',
+  'chayei sara': 'chayei sarah',
+  'lechlecha': 'lech lecha',
+  'nasso': 'naso',
+  'shlach': 'shelach',
+  'shmini': 'shemini',
+  'vayeilech': 'vayelech',
+};
+
+/**
  * Get the current Hebrew date for Israel
  * Considers sunset (approximate) to determine if it's the next day
  */
@@ -67,13 +80,13 @@ export function getCurrentParashaDiaspora(): string[] {
  * Normalize parasha name for comparison
  */
 export function normalizeParashaName(name: string): string {
-  return name
+  const normalized = name
     .toLowerCase()
-    .replace(/'/g, '')
-    .replace(/’/g, '')
-    .replace(/-/g, ' ')
+    .replace(/['\u2019]/g, '')
+    .replace(/-/g, '')
     .replace(/\s+/g, ' ')
     .trim();
+  return parashaAliases[normalized] ?? normalized;
 }
 
 /**
