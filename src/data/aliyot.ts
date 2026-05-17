@@ -462,8 +462,8 @@ export const parashiotAliyot: ParashaWithAliyot[] = [
     parashaId: 35,
     sefariaUrl: "https://www.sefaria.org/Numbers.4.21-7.89",
     aliyot: [
-      { number: 1, name: "Rishon", start: "4:21", end: "4:37", verses: 17, summary: "Service des Guershonites. Recensement des Kehatites aptes au service." },
-      { number: 2, name: "Sheni", start: "4:38", end: "4:49", verses: 12, summary: "Recensement des Guershonites et Mérarites. Total des Lévites : 8 580." },
+      { number: 1, name: "Rishon", start: "4:21", end: "4:28", verses: 8, summary: "Service des Guershonites. Recensement des Kehatites aptes au service." },
+      { number: 2, name: "Sheni", start: "4:29", end: "4:49", verses: 21, summary: "Recensement des Guershonites et Mérarites. Total des Lévites : 8 580." },
       { number: 3, name: "Shlishi", start: "5:1", end: "5:10", verses: 10, summary: "Exclusion des impurs du camp. Restitution du vol avec le cinquième." },
       { number: 4, name: "Revi'i", start: "5:11", end: "6:27", verses: 48, summary: "La Sota (femme soupçonnée). Le Nazir. La bénédiction des Kohanim." },
       { number: 5, name: "Hamishi", start: "7:1", end: "7:41", verses: 41, summary: "Inauguration du Tabernacle. Offrandes des princes des 6 premières tribus." },
